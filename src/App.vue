@@ -3,15 +3,30 @@
 </script>
 
 <template>
- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal"><router-link to="/">Vue Mini Project</router-link> </h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#"><router-link to="/product">Product </router-link></a>
-        
-      <a class="p-2 text-dark" href="#"><router-link to="/user">User</router-link>  </a>
-    </nav>
-    <a class="btn btn-outline-primary" ><router-link to="/login">Đăng nhập</router-link> </a>
+  <div>
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 " >      
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <h3><a class="navbar-brand "><router-link to="/">Vue Mini Project</router-link></a></h3>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link  " aria-current="page" ><router-link to="/product">Product </router-link></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" ><router-link to="/user">User</router-link></a>
+            </li>
+        </ul>
+      </div>    
+      </nav>
+      <a class="btn btn-outline-primary " ><router-link to="/login">Đăng nhập</router-link> </a>
+    </div>
+    <RouterView />
   </div>
 
-  <RouterView />
+  
 </template>
+<style>
+.decoration{
+  text-decoration: none !important;
+}
+</style>

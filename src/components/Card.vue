@@ -1,113 +1,106 @@
 <template>
-    <div>
-        <div class="card">
-            <svg class="img" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%"
-                version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
-                image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 784.37 1277.39"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Layer_x0020_1">
-                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                    <g id="_1421394342400">
-                        <g>
-                            <polygon fill="#343434" fill-rule="nonzero"
-                                points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.29 784.13,650.54"></polygon>
-                            <polygon fill="#8C8C8C" fill-rule="nonzero"
-                                points="392.07,0 -0,650.54 392.07,882.29 392.07,472.33"></polygon>
-                            <polygon fill="#3C3C3B" fill-rule="nonzero"
-                                points="392.07,956.52 387.24,962.41 387.24,1263.28 392.07,1277.38 784.37,724.89">
-                            </polygon>
-                            <polygon fill="#8C8C8C" fill-rule="nonzero" points="392.07,1277.38 392.07,956.52 -0,724.89">
-                            </polygon>
-                            <polygon fill="#141414" fill-rule="nonzero"
-                                points="392.07,882.29 784.13,650.54 392.07,472.33"></polygon>
-                            <polygon fill="#393939" fill-rule="nonzero" points="0,650.54 392.07,882.29 392.07,472.33">
-                            </polygon>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-            <div class="textBox">
-                <p class="text head">Ethereum</p>
-                <span>Cryptocurrency</span>
-                <p class="text price">1.654,34€</p>
-            </div>
+<div>
+    <div class="loader">
+        <div class="wrapper">
+            <div class="circle"></div>
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+            <div class="line-4"></div>
         </div>
     </div>
+</div>
 </template>
 <style>
-    .card {
-        width: 195px;
-        height: 285px;
-        background: #313131;
-        border-radius: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        transition: 0.2s ease-in-out;
-    }
+.loader {
+    position: relative;
+    width: 240px;
+    height: 130px;
+    margin-bottom: 10px;
+    border: 1px solid #d3d3d3;
+    padding: 15px;
+    background-color: #e3e3e3;
+    overflow: hidden;
+}
 
-    .img {
-        height: 30%;
-        position: absolute;
-        transition: 0.2s ease-in-out;
-        z-index: 1;
-    }
+.loader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+    110deg,
+    rgba(227, 227, 227, 0) 0%,
+    rgba(227, 227, 227, 0) 40%,
+    rgba(227, 227, 227, 0.5) 50%,
+    rgba(227, 227, 227, 0) 60%,
+    rgba(227, 227, 227, 0) 100% );
+    animation: gradient-animation_2 1.2s linear infinite;
+}
 
-    .textBox {
-        opacity: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        transition: 0.2s ease-in-out;
-        z-index: 2;
-    }
+.loader .wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
-    .textBox>.text {
-        font-weight: bold;
-    }
+.loader .wrapper > div {
+    background-color: #cacaca;
+}
 
-    .textBox>.head {
-        font-size: 20px;
-    }
+.loader .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 
-    .textBox>.price {
-        font-size: 17px;
-    }
+.loader .button {
+    display: inline-block;
+    height: 32px;
+    width: 75px;
+}
 
-    .textBox>span {
-        font-size: 12px;
-        color: lightgrey;
-    }
+.loader .line-1 {
+    position: absolute;
+    top: 11px;
+    left: 58px;
+    height: 10px;
+    width: 100px;
+}
 
-    .card:hover>.textBox {
-        opacity: 1;
-    }
+.loader .line-2 {
+    position: absolute;
+    top: 34px;
+    left: 58px;
+    height: 10px;
+    width: 150px;
+}
 
-    .card:hover>.img {
-        height: 65%;
-        filter: blur(7px);
-        animation: anim 3s infinite;
-    }
+.loader .line-3 {
+    position: absolute;
+    top: 57px;
+    left: 0px;
+    height: 10px;
+    width: 100%;
+}
 
-    @keyframes anim {
-        0% {
-            transform: translateY(0);
-        }
+.loader .line-4 {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    height: 10px;
+    width: 92%;
+}
 
-        50% {
-            transform: translateY(-20px);
-        }
+@keyframes gradient-animation_2 {
+0% {
+        transform: translateX(-100%);
+}
 
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    .card:hover {
-        transform: scale(1.04) rotate(-1deg);
-    }
+100% {
+    transform: translateX(100%);
+}
+}
 </style>

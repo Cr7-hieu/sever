@@ -3,7 +3,7 @@ import Card from '../components/Card.vue'
 </script>
 
 <template>
-  <main>
+  <main> 
     <Card />
   </main>
 </template>

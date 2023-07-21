@@ -29,7 +29,7 @@
                     <label for="number" class="col-form-label">Số điện thoại</label>
                 </div>
                 <div class="col-auto">
-                    <input type="number" id="number" class="form-control" aria-labelledby="number" v-model="thongTin.sdt" placeholder="98+">
+                    <input type="tel" id="tel" class="form-control" aria-labelledby="tel" v-model="thongTin.sdt" placeholder="98+">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary"  v-if="!formRegister">Đăng ký </button>

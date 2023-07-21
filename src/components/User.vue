@@ -1,127 +1,86 @@
 <template>
     <div>
-
         <div class="card">
-            <div class="infos">
-                <div class="image"></div>
-                <div class="info">
-                    <div>
-                        <p class="name">
-                            John Doe
-                        </p>
-                        <p class="function">
-                            Front-end dev
-                        </p>
-                    </div>
-                    <div class="stats">
-                        <p class="flex flex-col">
-                            Articles
-                            <span class="state-value">
-                                34
-                            </span>
-                        </p>
-                        <p class="flex">
-                            Followers
-                            <span class="state-value">
-                                455
-                            </span>
-                        </p>
-
-                    </div>
-                </div>
+            <label class="avatar"></label>
+            <label class="info">
+                <span class="info-1">{{ user.name }}</span>
+                <span class="info-2">{{ user.email }}</span>
+            </label>
+            <div class="content-1">
+                <p>Tiểu sử: {{ user.bio }}</p>
             </div>
-            <button class="request" type="button">
-                Add friend
-            </button>       
-        </div>
+            <div class="content-2">
+                <p>Số tiền hiện có: {{ user.balance }}</p>
+            </div>
+</div>
     </div>
 </template>
+
 <script setup>
+import { ref } from 'vue';
+const user = ref({
+  name: 'John Doe',
+  age: 30,
+  email: 'johndoe@example.com',
+  bio: 'Tôi là một nhà phát triển web',
+  balance: '$100.00'
+});
 
 </script>
 <style>
-    .card {
-        max-width: 320px;
-        border-radius: 1rem;
-        background-color: rgba(31, 41, 55, 1);
-        padding: 1rem;
-    }
-
-    .infos {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        grid-gap: 1rem;
-        gap: 1rem;
-    }
-
-    .image {
-        height: 7rem;
-        width: 7rem;
-        border-radius: 0.5rem;
-        background-color: rgb(118, 36, 194);
-        background: linear-gradient(to bottom right, rgb(118, 36, 194), rgb(185, 128, 240));
-    }
-
-    .info {
-        height: 7rem;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .name {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 1);
-    }
-
-    .function {
-        font-size: 0.75rem;
-        line-height: 1rem;
-        color: rgba(156, 163, 175, 1);
-    }
-
-    .stats {
-        width: 100%;
-        border-radius: 0.5rem;
-        background-color: rgba(255, 255, 255, 1);
-        padding: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 0.75rem;
-        line-height: 1rem;
-        color: rgba(0, 0, 0, 1);
-    }
-
-    .flex {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 4px;
-    }
-
-    .state-value {
-        font-weight: 700;
-        color: rgb(118, 36, 194);
-    }
-
-    .request {
-        margin-top: 1.5rem;
-        width: 100%;
-        border: 1px solid transparent;
-        border-radius: 0.5rem;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        transition: all .3s ease;
-    }
-
-    .request:hover {
-        background-color: rgb(118, 36, 194);
-        color: #fff;
-    }
+.card{
+    width: 300px;
+    height: 300px;
+    border-radius: 44px;
+    background: lightgray;
+    background: linear-gradient(145deg, #ff6b6b, #d43636);
+    box-shadow: 2px 3px 3px #ba2f2f,2px 3px 3px #ff4949 ;
+}
+.avatar{
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.9);
+    margin: 0 15px 10px 15px;
+    border-radius: 50%;
+}
+.info{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    width: 170px;
+}
+.info-1, .info-2{
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.9);
+}
+.info-1{
+    height: 30px;
+    width: 75%;
+    border-radius: 12px;
+    margin-bottom:10px ;
+    text-align: center;
+}
+.info-2{
+    height: 30px;
+    width: 100%;
+    border-radius: 12px;
+}
+.content-1{
+    width: 90%;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    height: 40px;
+    margin: 10px 0 5px 0;
+}
+.content-2{
+    width: 60%;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.9);
+    height: 20px;
+    margin: 10px 0 5px 20px;
+}
 </style>
