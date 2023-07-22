@@ -29,12 +29,12 @@ const router = createRouter({
     },
     {
       path:'/user',
-      name:'create.user',
+      name:'user.list',
       component:() => import('../components/User.vue')
     },
     {
       path:'/product',
-      name:'create.product',
+      name:'product.list',
       component:() => import('../components/Product.vue')
     },
 

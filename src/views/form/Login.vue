@@ -1,64 +1,85 @@
 <template>
-    <div>
-        <form @submit.prevent="submitForm" v-if="!checkLogin">
-            <p>Email</p>
-            <input type="text" v-model="form.email">
-            <div v-if="error.requiredEmail">{{ error.requiredEmail }}</div>
-            <div v-if="error.invalidEmail">{{ error.invalidEmail }}</div>
-            <p>Password</p>
-            <input type="password" v-model="form.password">
-            <div v-if="error.requiredPassword">{{ error.requiredPassword }}</div>
-            <div v-if="error.invalidPassword">{{ error.invalidPassword }}</div>
-            <button type="submit" @click="login">Login</button>
-            <p v-if="checkLogin">Đăng nhập thành công</p>
-            <div>
-                <h3>Bạn chưa có tài khoản</h3>
-                <router-link to="/register">Đăng ký</router-link>
-            </div>
-        </form>
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <form @submit.prevent="submitFrom" autocomplete="off">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input class="form-control" :class="{'is-invalid': error.email}" type="text" v-model="form.email">
+          <div class="invalid-feedback" v-if="error.email">{{ error.email }}</div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input class="form-control" :class="{'is-invalid': error.password}" type="password" v-model="form.password">
+          <div class="invalid-feedback" v-if="error.password">{{ error.password }}</div>
+        </div>
+        <div class="mb-3">
+          <button v-if="!checkLogin"
+              class="btn btn-primary" type="submit" @click="submitFrom">Login</button>
+          <div class="spinner-border" role="status" v-else>
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div>
+            <p>Bạn chưa có tài khoản</p>
+            <router-link :to="{name:'form.register'}">Đăng ký</router-link>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
+
 </template>
 <script setup>
 import {reactive, ref} from 'vue'
+import {useRouter} from 'vue-router';
+
+const router = useRouter()
+
 const form = reactive({
-    email:'',
-    password:''
+  email: '',
+  password: '',
 })
 const checkLogin = ref(false)
-function login(){
-    checkLogin.value = true
-}
-const error = reactive({
-    requiredEmail:'',
-    invalidEmail:'',
-    requiredPassword:'',
-    invalidPassword:''
-})
-function submitFrom(){
-    error.requiredEmail = "";
-    error.invalidEmail = "";
-    error.requiredPassword = "",
-    error.invalidPassword = "";
-    if (!form.email){
-        error.requiredEmail = 'Vui lòng nhập email';
-    }else if (!isValidemail(form.email)){
-        error.invalidEmail = 'vui lòng nhập địa chỉ email hợp lệ';
-    }else{}
-    if(!form.password){
-        error.requiredPassword = 'Vui lòng nhập mật khẩu';
-    }else if(!isValidPasswork(form.password)){
-        error.invalidPassword = ' vui lòng nhập mật khẩu hợp lệ';
-    }else{
-        login()
-    }
-}
-function isValidemail(email){
-    const regex = /^\S+@[a-zA-Z0-9-]+\.\S+$/;
 
-    return regex.test(email)
+function login() {
+  checkLogin.value = true
+  setTimeout(() => {
+    router.push({name: 'home'})
+  }, 2000)
+
 }
-function isValidPassword(password){
-    return password.length >=8
+
+const error = reactive({
+  email: '',
+  password: '',
+})
+
+function submitFrom() {
+  error.email = "";
+  error.password = "";
+  if (!form.email) {
+    error.email = 'Vui lòng nhập email';
+  } else if (!checkMail(form.email)) {
+    error.email = 'vui lòng nhập địa chỉ email hợp lệ';
+  }
+  if (!form.password) {
+    error.password = 'Vui lòng nhập mật khẩu';
+  } else if (!checkPassword(form.password)) {
+    error.password = ' vui lòng nhập mật khẩu hợp lệ';
+  }
+
+  if (!error.email && !error.password) {
+    login()
+  }
+}
+
+function checkMail(email) {
+  const regex = /^\S+@[a-zA-Z0-9-]+\.\S+$/g;
+
+  return regex.test(email)
+}
+
+function checkPassword(password) {
+  return password.length >= 8
 }
 
 </script>
