@@ -37,7 +37,21 @@ const router = createRouter({
       name:'product.list',
       component:() => import('../components/Product.vue')
     },
-
+    {
+      path:'/pay',
+      name:'card.pay',
+      component:() => import('../components/Pay.vue')
+    },
+    {
+      path:'/money',
+      name:'card.money',
+      component:() => import('../components/Money.vue')
+    },
+    {
+      path:'/order',
+      name:'money.order',
+      component:() => import('../components/Money.vue')
+    },
   ]
 })
 
