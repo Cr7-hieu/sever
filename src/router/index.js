@@ -49,8 +49,8 @@ const router = createRouter({
     },
     {
       path:'/order',
-      name:'money.order',
-      component:() => import('../components/Money.vue')
+      name:'order.great',
+      component:() => import('../components/Order.vue')
     },
   ]
 })

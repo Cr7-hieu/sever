@@ -13,28 +13,12 @@
     </div>
 </template>
 <script setup>
-import { ref , computed} from 'vue';
-const orders = computed(() => this.$store.state.orders);
-const thongTinDatHang = ref({
-    soDienthoai:'',
-    soLuong:0,
-    diaChiGiaoHang:''
-}) 
-const guiYeuCauDatHang = () => {
-    // Add new order to store
-    const newOrder = {
-        id: Date.now(),
-        name: `Đơn hàng ${Date.now()}`,
-        total: thongTinDatHang.value.soLuong * 100
-    };
-    this.$store.commit('addOrder', newOrder);
-    //reset biến thông tin đặt hàng
-    thongTinDatHang.value = {
-        soDienthoai: '',
-        soLuong: 0,
-        diaChiGiaoHang: ''
-    };
-    console.log('Thông tin đặt hàng:', thongTinDatHang.value);
-}
+import { ref, computed} from 'vue';
+const orders = ref([
+  { id: 1, name: 'Đơn hàng 1', total: 100 },
+  { id: 2, name: 'Đơn hàng 2', total: 200 },
+  { id: 3, name: 'Đơn hàng 3', total: 300 }
+]);
+
 </script>
 

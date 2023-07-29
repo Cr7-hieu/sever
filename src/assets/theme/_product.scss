@@ -1,0 +1,24 @@
+ul li {
+    list-style: none;
+    
+}
+.item{
+    font-weight: 400;
+}
+.btn-them {
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #007ACC;
+    outline: 3px #007ACC solid;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+    font-weight: 400;
+    color:white;
+}
+.btn-them:hover{
+    background-color: transparent;
+    color: black;
+}

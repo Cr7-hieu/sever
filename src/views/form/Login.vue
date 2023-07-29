@@ -66,7 +66,6 @@ function submitFrom() {
   } else if (!checkPassword(form.password)) {
     error.password = ' vui lòng nhập mật khẩu hợp lệ';
   }
-
   if (!error.email && !error.password) {
     login()
   }

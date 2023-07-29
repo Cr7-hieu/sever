@@ -1,3 +1,45 @@
 @import "bootstrap/scss/bootstrap";
 @import "theme/product";
-@import "theme/loader"
+@import "theme/loader";
+@import "theme/card";
+@import "theme/item";
+@import "theme/home";
+
+$text-deco: none;
+$list-style: none;
+
+
+
+
+.text-router {
+    text-decoration: $text-deco;
+    color: black;
+    font-weight: 600;
+}
+.this-icon{
+    color: #16e651;
+}
+
+.text-router:hover{
+    color: #ea0606;
+}
+.btn {
+    background-color: #ffffff00;
+    color: #d71919;
+    width: 8.5em;
+    height: 2.9em;
+    border: #3654ff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+}
+.btn .icon{
+    transition: all 0.6s ease;
+}
+.btn:hover {
+    background-color: #3654ff;
+    transform: translateX(5px);
+}
+.btn:hover .icon {
+    transform: translateX(5px);
+}
