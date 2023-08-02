@@ -1,13 +1,16 @@
 <template>
   <div class="grid text-center pading-top">
-    <div>
-      <ul >
-        <li v-for="product in filteredProducts" :key="product.id" >
-          {{ product.name }}
-          <button @click="addToCart(product)" class="btn-them  ">  Thêm vào giỏ hàng</button>
-        </li>
-        
-      </ul>
+    <div class="this-pro">
+      <div  >
+        <h2>Sản phẩm</h2>
+        <ul >
+          <li v-for="product in filteredProducts" :key="product.id" >
+            {{ product.name }}
+            <button @click="addToCart(product)" class="btn-them  ">  Thêm vào giỏ hàng</button>
+          </li>       
+        </ul>
+      </div>
+      
       <div>
         <h2>Giỏ hàng</h2>
         <ul>
@@ -16,7 +19,7 @@
           </li>
         </ul>
         <div>
-          <button class="btn-them" v-if="!check" @click="checkout">Thanh toán</button>
+          <button class="this-btn" v-if="!check" @click="checkout">Thanh toán</button>
           <div v-else class="loader">
             <span></span>
           </div>

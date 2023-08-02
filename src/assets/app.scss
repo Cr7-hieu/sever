@@ -4,13 +4,19 @@
 @import "theme/card";
 @import "theme/item";
 @import "theme/home";
-
+@import "theme/user";
+@import "theme/_login";
+@import "theme/theproduct";
+@import "theme/register";
 $text-deco: none;
 $list-style: none;
 
 
 
-
+.footer{
+    padding-top: 20px;
+   
+}
 .text-router {
     text-decoration: $text-deco;
     color: black;
@@ -23,23 +29,26 @@ $list-style: none;
 .text-router:hover{
     color: #ea0606;
 }
-.btn {
-    background-color: #ffffff00;
-    color: #d71919;
-    width: 8.5em;
-    height: 2.9em;
-    border: #3654ff 0.2em solid;
-    border-radius: 11px;
-    text-align: right;
-    transition: all 0.6s ease;
-}
-.btn .icon{
-    transition: all 0.6s ease;
-}
-.btn:hover {
-    background-color: #3654ff;
-    transform: translateX(5px);
-}
-.btn:hover .icon {
-    transform: translateX(5px);
-}
+// .login {
+//     background-color: #ffffff00;
+//     // color: #d71919;
+//     width: 136px;
+//     height: 46.4px;
+//     border: #3654ff 0.2em solid;
+//     border-radius: 11px;
+//     text-align: right;
+//     transition: all 0.6s ease;
+// }
+// .login .icon{
+//     transition: all 0.6s ease;
+// }
+// .btn:hover {
+//     background-color: #3654ff;
+//     transform: translateX(5px);
+// }
+// .login:hover .icon {
+//     transform: translateX(5px);
+// }
+// .text-router-2{
+//     text-decoration: none;
+// }

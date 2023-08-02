@@ -52,6 +52,11 @@ const router = createRouter({
       name:'order.great',
       component:() => import('../components/Order.vue')
     },
+    {
+      path:'/theproduct',
+      name:'theproduct.group',
+      component:()=>import('../components/TheProduct.vue')
+    }
   ]
 })
 
