@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <div>
+    <div class="">
+        <div  class="is-date">
             <h2>Lịch giao hàng</h2>
-            <div>
-                <button @click="prevMonth">&lt;</button>
+            <div class="this-transfer">
+                <button @click="nextMonth">&lt;</button>
                 <h3>{{ currentMonth }}</h3>
                 <button @click="nextMonth">&gt;</button>
             </div>
@@ -16,7 +16,7 @@
                         <td v-for="date in week" :key="date">
                             <div :class="{ selected: isDateSelected(date),
                                 today: isToday(date) }" @click="selectDate(date)">
-                                <span>{{ date.getDate }}</span>
+                                <span>{{ date.getDate() }}</span>
                             </div>
                         </td>
                     </tr>
@@ -38,10 +38,10 @@ const selectedDate = ref(null);
 const deliveryDate = computed(() => {
     return selectedDate.value
         ? selectedDate.value.toLocaleDateString('en-US', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
-          })
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+        })
         : '';
 });
 const currentMonth = ref(
@@ -105,7 +105,7 @@ function updateDeliveryDate() {
             day: 'numeric',
             year: 'numeric',
         });
+        deliveryDate.value = selectedDate.value;
     }
 }
-
 </script>

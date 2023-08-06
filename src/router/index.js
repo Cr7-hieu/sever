@@ -58,9 +58,9 @@ const router = createRouter({
       component:()=>import('../components/TheProduct.vue')
     },
     {
-      path:'/time',
-      name:'time.run',
-      component:()=>import('../components/Time.vue')
+      path:'/date',
+      name:'date.run',
+      component:()=>import('../components/Date.vue')
     },
   ]
 })
