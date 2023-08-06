@@ -22,4 +22,4 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 // app.use(VueAwesomeSwiper)
 app.mount('#app')
 
-s
+

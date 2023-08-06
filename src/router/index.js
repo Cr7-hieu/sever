@@ -54,9 +54,14 @@ const router = createRouter({
     },
     {
       path:'/theproduct',
-      name:'theproduct.group',
+      name:'theproduct.index',
       component:()=>import('../components/TheProduct.vue')
-    }
+    },
+    {
+      path:'/time',
+      name:'time.run',
+      component:()=>import('../components/Time.vue')
+    },
   ]
 })
 

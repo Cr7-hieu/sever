@@ -9,15 +9,18 @@
         <div class="this-title">
             <div class="mike">
                 <h2>Iphone 13 <br><span>Gen Z</span></h2>
-                <h3><sup>$</sup>1 <small>.000</small></h3>
-            </div>
-            <ul class="this-number">
-                <li>32Gb</li>
-                <li>64Gb</li>
-                <li>128Gb</li>               
-            </ul>
+                <h3><sup>$</sup> {{ totalPrice }}<small>.000</small></h3>
+            </div>            
+            <div v-for="item in items" :key="item.value" >
+                <input type="checkbox" :value="item" v-model="selectedItems" >
+                {{ item.label }}
+            </div>                          
             <button>
-                <a href="">Buy</a>
+                <a href="">
+                    <router-link to="/pay">
+                        Buy
+                    </router-link>
+                </a>
             </button>
             
         </div>
@@ -26,7 +29,18 @@
 </div>
 </template>
 <script setup>
+import { ref ,computed} from 'vue'
 
+const items = ref([
+  { label: '32Gb', value: '32', price: '10' },
+  { label: '64Gb', value: '64', price: '20' },
+  { label: '128Gb', value: '128', price: '30' }
+])
+const selectedItems = ref([])
+
+const totalPrice = computed(() => {
+  return selectedItems.value.reduce((total, item) => total + item.price,0)
+})
 </script>
 <style>
 

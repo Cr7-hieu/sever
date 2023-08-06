@@ -31,7 +31,7 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" ><router-link :to="{name:'order.great'}"  class="text-router">Đơn hàng thanh toán</router-link></a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" ><router-link :to="{name:'time.run'}"  class="text-router">Ngày giao hàng</router-link></a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                       </ul>

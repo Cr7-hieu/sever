@@ -27,28 +27,6 @@
     padding: 20px;
     flex-direction: column;
 }
-.this-number{
-    display: flex;
-    gap: 10px;
-}
-.this-number li{
-    color: #181616;
-    font-size: 0.9em;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #2b2929;
-    cursor: pointer;
-    font-weight: 500px;
-    opacity: 0.5;
-}
-.this-number li:hover {
-background: #01c2bf;
-color: #1c1e1e;
-opacity: 0.5;
-}
 .box-pro .this-title h2{
     color: #01c2bf;
     text-transform: uppercase;
@@ -71,9 +49,8 @@ opacity: 0.5;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin-top: 10px;
 }
-
 .box-pro .this-title button a{
     text-decoration: none !important;
     
